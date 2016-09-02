@@ -8,7 +8,7 @@ have a vim configurated, this pack should be good enough to get some beauty.
 ## Instalation
 ### Easy way
 - Clone this repo [Mega-Vim](https://)
-- run the "install.sh" script
+- run the "install.sh" script (really recommended)
 - Enjoy your new vim.
 
 ### Manually

@@ -36,7 +36,7 @@ set nocp
 set nocompatible
 
 " Sets how many lines of history VIM has to remember
-set history=700
+set history=500
 
 " Enable filetype plugins
 filetype plugin on
@@ -56,26 +56,31 @@ nmap <leader>w :w!<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " =>              Colorscheme configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set background color/type
+" set background=dark
+
 " Set main colorscheme 
 colorscheme mirodark
 
-" Others colorschemes installed
-" colorscheme seti
-" colorscheme busybee
-" colorscheme badwolf
-" colorscheme goodwolf
-" colorscheme molokai
-" colorscheme jellybeans
+" Others colorschemes are installed on ~/.vim/colors/
+" Chose one and set here like this example:
 
-" Set background color/type
-" set background=dark
+" colorscheme <file-name>
+
+" or with you want manually, just run:
+
+" :colorscheme <file-name>
 "
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " =>               Plugin: Powerline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set Vim status line equals to powerline
-set rtp+=/usr/lib/python2.7/dist-packages/powerline/bindings/vim/
+" With it installed using python2.7 like debian based system, use the below:
+" set rtp+=/usr/lib/python2.7/dist-packages/powerline/bindings/vim/
+
+" For others distro's that use the python3.5 like mine, use that:
+set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim/
 
 " Use 256 colors
 set t_Co=256
@@ -84,17 +89,17 @@ set t_Co=256
 " =>               Plugin: NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto enable NERDTree plugin when VIM startup
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 
 " Enable NERDTree plugin
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" Key to open NERDTree with Ctrl+n
+" Key to open NERDTree with [Ctrl]+[n]
 map <C-n> :NERDTreeToggle<CR>
 
 " Close Vim if only NERDTree is opened
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q! | endif
 
 " Change default arrows in NERDTree
 let g:NERDTreeDirArrowExpandable = '▸'

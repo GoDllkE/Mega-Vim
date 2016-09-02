@@ -20,12 +20,12 @@ if [[ -d "$HOME/.vim" ]]; then
     if [[ -d "$HOME/.vim/colors/" ]]; then
         echo -e "${BLUE}:: ${WHITE}Folder \"${GREEN}.vim/colors/${WHITE}\" exist in your home directory!${RESET}"
     else
-        echo "${BLUE}:: ${WHITE}Creating \".vim/${GREEN}colors${WHITE}/\" folder in your home directory${RESET}"
+        echo -e "${BLUE}:: ${WHITE}Creating \".vim/${GREEN}colors${WHITE}/\" folder in your home directory${RESET}"
     fi
 else
-    echo "${BLUE}:: ${WHITE}Creating \".vim\" folder in your home directory${RESET}"
+    echo -e "${BLUE}:: ${WHITE}Creating \".vim\" folder in your home directory${RESET}"
     mkdir "$HOME/.vim"
-    echo "${BLUE}:: ${WHITE}Creating \".vim/${GREEN}colors${WHITE}/\" folder in your home directory${RESET}"
+    echo -e "${BLUE}:: ${WHITE}Creating \".vim/${GREEN}colors${WHITE}/\" folder in your home directory${RESET}"
     mkdir "${HOME}/.vim/colors/"
 fi
 
